@@ -1,0 +1,56 @@
+/* style.css */
+
+/* Fix Services dropdown hover */
+#servicesDropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Hide submenus by default */
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 0.1rem;
+    background-color: #f8f9fa;
+    min-width: 200px;
+    z-index: 1000;
+    padding: 0;
+    border: 1px solid #dee2e6;
+  }
+  
+  .service-item:hover .submenu {
+    display: block;
+  }
+  
+  /* Styling for submenu items */
+  .submenu li a {
+    display: block;
+    padding: 8px 16px;
+    color: #000;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  
+  .submenu li a:hover {
+    background-color: #e9ecef;
+    color: #000;
+  }
+  
+  /* Ensure the Services dropdown doesn't flicker */
+  #servicesList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    min-width: 250px;
+    z-index: 1000;
+  }
+  
+  #servicesDropdown:hover #servicesList {
+    display: block;
+  }
+  
