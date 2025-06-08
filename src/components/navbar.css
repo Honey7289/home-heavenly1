@@ -1,115 +1,137 @@
-/* Main navbar container */
-.navbar-nav {
-  position: relative;
-}
+/* ./navbar.css */
 
-/* Dropdown for Services */
 .nav-services-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 250px;
-  z-index: 2000;
-  background-color: #fff;
-  border: 1px solid #dee2e6;
-  padding: 8px;
-  border-radius: 4px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  overflow-y: auto;
+  min-width: 300px;
+  transition: all 0.3s ease;
 }
 
-/* Individual service item inside Services dropdown */
 .nav-service-item {
-  position: relative;
-  padding: 8px 12px;
+  padding: 5px 10px;
   cursor: pointer;
-  white-space: nowrap;
 }
 
-/* Hover effect for main service items */
 .nav-service-item:hover {
   background-color: #f8f9fa;
+  border-radius: 4px;
 }
 
-/* Submenu that appears to the right of a service item */
 .nav-service-submenu {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  margin-left: 5px;
-  min-width: 300px;
-  background-color: #fff;
-  border: 1px solid #dee2e6;
-  padding: 8px;
-  border-radius: 4px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Links inside the submenu */
 .nav-service-submenu .dropdown-item {
-  padding: 5px 15px;
-  font-size: 14px;
-  color: #333;
-  text-align: center;
-}
-
-/* Hover effect for submenu links */
-.nav-service-submenu .dropdown-item:hover {
-  background-color: #f8f9fa;
-}
-
-/* My Account dropdown styling */
-.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-  display: block;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1050;
-  width: 300px;
-  min-width: 250px;
-}
-
-/* Styling for My Account dropdown menu */
-.navbar-nav .nav-item.dropdown .dropdown-menu {
-  z-index: 1050;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  min-width: 300px;
-  background-color: white;
-  border: 1px solid #dee2e6;
-  padding: 8px;
-  border-radius: 4px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
-}
-
-/* Login/Signup box inside My Account */
-.navbar-nav .nav-item.position-relative .p-3 {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Title text */
-.navbar-nav .nav-item.position-relative .text-center h5 {
-  font-size: 20px;
-}
-
-/* Items inside dropdown menu */
-.navbar-nav .dropdown-menu .dropdown-item {
-  padding: 10px 15px;
-  background-color: #f8f9fa;
-  color: #333;
-  font-weight: 500;
   text-align: left;
+  white-space: normal;
+  font-size: 14px;
+  padding: 8px 12px;
+  transition: background 0.2s ease-in-out;
 }
 
-/* Hover effect for My Account dropdown items */
-.navbar-nav .dropdown-menu .dropdown-item:hover {
+.nav-service-submenu .dropdown-item:hover {
   background-color: #e9ecef;
+  border-radius: 4px;
 }
 
-/* Border styling for My Account dropdown */
-.navbar-nav .nav-item .dropdown-menu {
-  border: 1px solid #ddd;
-  border-radius: 5px;
+.navbar .dropdown-menu {
+  font-size: 14px;
+  min-width: 220px;
+  z-index: 1050;
+  border-radius: 6px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.navbar .dropdown-item {
+  padding: 10px 15px;
+  transition: background-color 0.2s ease;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: #f1f1f1;
+  color: #212529;
+}
+
+.navbar-nav .nav-link {
+  padding: 10px 15px;
+  font-weight: 500;
+  color: #ffffff !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107 !important;
+  text-decoration: underline;
+}
+
+.navbar-toggler {
+  border-color: rgba(255,255,255,0.1);
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.25);
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 991.98px) {
+  .nav-services-dropdown {
+    position: static !important;
+    box-shadow: none !important;
+    background: #fff;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .nav-service-item {
+    margin-bottom: 10px;
+  }
+
+  .nav-service-submenu {
+    position: static !important;
+    box-shadow: none !important;
+    margin-top: 10px;
+  }
+
+  .navbar-nav {
+    background-color: #343a40;
+    padding: 10px 0;
+  }
+
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    padding: 10px 20px;
+  }
+
+  .navbar-nav .nav-link:hover {
+    background-color: #495057;
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-service-submenu .dropdown-item {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .nav-services-dropdown {
+    min-width: 100%;
+  }
 }
