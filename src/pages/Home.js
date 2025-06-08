@@ -32,32 +32,37 @@ const Home = () => {
   ];
 
   return (
-    <div className="container my-10">
-      <section className="text-center mb-10">
-        <h1 className="text-4xl font-bold mb-4">Find Your Dream Property</h1>
-        <p className="text-gray-600 text-lg">Browse the best properties for sale and rent in Australia</p>
+    <div className="container mx-auto px-4 py-12">
+      <section className="text-center mb-16">
+        <h1 className="text-5xl font-extrabold mb-4 text-gradient bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent">Find Your Dream Property</h1>
+        <p className="text-gray-600 text-xl">Explore premium properties for sale and rent across Australia</p>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold mb-6 text-primary">Properties for Sale</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <section className="mb-16">
+        <h2 className="text-4xl font-bold mb-8 text-blue-700 border-b-4 border-blue-300 inline-block">Properties for Sale</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {propertiesForSale.map((property, index) => (
-            <PropertyCard key={`sale-${index}`} property={property} />
+            <div key={`sale-${index}`} className="hover:scale-[1.02] transition-transform duration-300">
+              <PropertyCard property={property} />
+            </div>
           ))}
         </div>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-3xl font-semibold mb-6 text-secondary">Properties for Rent</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <section className="mb-16">
+        <h2 className="text-4xl font-bold mb-8 text-green-700 border-b-4 border-green-300 inline-block">Properties for Rent</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {propertiesForRent.map((property, index) => (
-            <PropertyCard key={`rent-${index}`} property={property} />
+            <div key={`rent-${index}`} className="hover:scale-[1.02] transition-transform duration-300">
+              <PropertyCard property={property} />
+            </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-gray-50 p-6 rounded-xl shadow-inner">
-        <h2 className="text-2xl font-medium mb-4 text-center">Our Services</h2>
+      <section className="bg-white p-10 rounded-3xl shadow-lg">
+        <h2 className="text-3xl font-semibold mb-6 text-center text-gray-800">What We Offer</h2>
+        <p className="text-center text-gray-500 mb-8">Our services cover every aspect of real estate transactions and management.</p>
         <ServicesList services={services} />
       </section>
     </div>
