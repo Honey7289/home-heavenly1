@@ -1,32 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,800');
 
-/* Base form container (centers popup) */
+/* Overlay backdrop */
 .auth-popup {
   position: fixed;
   top: 0;
   left: 0;
-  width: 50vw;
+  width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.6);
   z-index: 1050;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* Inner box of the popup */
+/* Popup card container */
 .auth-popup-inner {
   background: #fff;
   border-radius: 15px;
-  padding: 30px;
-  width: 50%;
-  max-width: 400px;
+  padding: 40px 30px;
+  width: 90%;
+  max-width: 450px;
   position: relative;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   animation: popupFadeIn 0.3s ease-in-out;
 }
 
-/* Simple fade-in animation */
+/* Smooth fade animation */
 @keyframes popupFadeIn {
   from {
     opacity: 0;
@@ -38,26 +39,28 @@
   }
 }
 
-/* Form elements */
+/* Form styling */
 .auth-form-popup form input,
 .auth-form-popup form select {
-  width: 50%;
-  padding: 0.75rem;
-  margin: 0.5rem 0;
-  border-radius: 6px;
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
 }
 
 .auth-form-popup form button {
-  width: 50%;
-  padding: 0.75rem;
-  margin-top: 1rem;
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
   background-color: #0d6efd;
-  color: white;
+  color: #fff;
   font-weight: 600;
+  font-size: 1rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  cursor: pointer;
   transition: background 0.3s ease;
 }
 
@@ -65,48 +68,40 @@
   background-color: #0b5ed7;
 }
 
-/* License modal overlay */
-.auth-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* License modal content */
-.auth-modal {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  width: 50%;
-  max-width: 500px;
-  position: relative;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.auth-modal input {
-  width: 50%;
-  margin: 0.5rem 0;
-  padding: 0.6rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-/* Close button inside license modal */
-.auth-modal .close-btn {
+/* Close button */
+.auth-popup-inner .close-btn {
   position: absolute;
-  top: 10px;
+  top: 12px;
   right: 15px;
   background: none;
   border: none;
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 1.4rem;
+  color: #888;
   cursor: pointer;
-  z-index: 10;
+  transition: color 0.2s ease;
+}
+
+.auth-popup-inner .close-btn:hover {
+  color: #000;
+}
+
+/* Responsive text alignment */
+.auth-form-popup h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Optional: add media query for smaller screens */
+@media (max-width: 500px) {
+  .auth-popup-inner {
+    width: 90%;
+    padding: 25px 20px;
+  }
+
+  .auth-popup-inner .close-btn {
+    top: 10px;
+    right: 10px;
+  }
 }
