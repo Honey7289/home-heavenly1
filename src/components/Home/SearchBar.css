@@ -1,6 +1,9 @@
 /* SearchBar.css */
 
 .search-bar-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -10,20 +13,42 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   align-items: center;
   justify-content: center;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  overflow: hidden;
+}
+
+.search-bar-container.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.search-bar-container.expanded {
+  max-height: 1200px;
+  opacity: 1;
+  pointer-events: all;
 }
 
 .search-bar-container input,
 .search-bar-container select {
-  padding: 12px 14px;
-  font-size: 15px;
+  padding: 10px 12px;
+  font-size: 14px;
   border: 1px solid #d1d5db;
   border-radius: 10px;
   flex: 1 1 180px;
   min-width: 160px;
+  max-width: 300px;
   background-color: #fff;
   outline: none;
   transition: all 0.3s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  margin-bottom: 8px;
+}
+
+.search-bar-container input::placeholder {
+  font-size: 13px;
+  color: #9ca3af;
 }
 
 .search-bar-container input:focus,
@@ -33,18 +58,20 @@
 }
 
 .search-bar-container button {
-  padding: 12px 20px;
+  padding: 12px 16px;
   background: linear-gradient(to right, #6366f1, #4f46e5);
   color: #ffffff;
   border: none;
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
   flex: 1 1 180px;
   min-width: 160px;
+  max-width: 300px;
+  margin-bottom: 8px;
 }
 
 .search-bar-container button:hover {
@@ -52,40 +79,39 @@
   box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
 }
 
-@media (max-width: 1024px) {
-  .search-bar-container {
-    gap: 12px;
-    padding: 20px;
-  }
-  .search-bar-container input,
-  .search-bar-container select,
-  .search-bar-container button {
-    flex: 1 1 100%;
-  }
-}
-
 @media (max-width: 768px) {
   .search-bar-container {
     flex-direction: column;
     align-items: stretch;
     padding: 16px;
+    gap: 8px;
   }
   .search-bar-container input,
   .search-bar-container select,
   .search-bar-container button {
     width: 100%;
-    font-size: 14px;
+    font-size: 13px;
+    max-width: 100%;
+    margin-bottom: 6px;
+  }
+  .search-bar-container input::placeholder {
+    font-size: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .search-bar-container {
-    gap: 10px;
+    padding: 12px;
+    gap: 6px;
   }
   .search-bar-container input,
   .search-bar-container select,
   .search-bar-container button {
-    padding: 10px 12px;
-    font-size: 13px;
+    padding: 10px;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  .search-bar-container input::placeholder {
+    font-size: 11px;
   }
 }
