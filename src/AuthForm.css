@@ -1,112 +1,118 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-
-/* Base form container (centers popup) */
-.auth-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1050;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Inner box of the popup */
-.auth-popup-inner {
-  background: #fff;
-  border-radius: 15px;
-  padding: 30px;
-  width: 100%;
+/* AuthForm.css */
+.auth-form-popup {
   max-width: 400px;
-  position: relative;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  animation: popupFadeIn 0.3s ease-in-out;
-}
-
-/* Simple fade-in animation */
-@keyframes popupFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Form elements */
-.auth-form-popup form input,
-.auth-form-popup form select {
-  width: 100%;
-  padding: 0.75rem;
-  margin: 0.5rem 0;
-  border-radius: 6px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #fff;
   border: 1px solid #ccc;
-  font-family: 'Montserrat', sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.auth-form-popup form button {
-  width: 100%;
-  padding: 0.75rem;
-  margin-top: 1rem;
-  background-color: #0d6efd;
+.auth-form-popup h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.auth-form-popup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form-popup input,
+.auth-form-popup select {
+  padding: 10px 14px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.auth-form-popup button {
+  margin-top: 16px;
+  padding: 12px;
+  background-color: #4CAF50;
   color: white;
-  font-weight: 600;
   border: none;
-  border-radius: 6px;
-  transition: background 0.3s ease;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.auth-form-popup form button:hover {
-  background-color: #0b5ed7;
+.auth-form-popup button:hover {
+  background-color: #45a049;
 }
 
-/* License modal overlay */
 .auth-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1100;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-/* License modal content */
 .auth-modal {
-  background: white;
-  padding: 2rem;
+  background-color: white;
+  padding: 24px;
   border-radius: 12px;
-  width: 100%;
+  width: 90%;
   max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   position: relative;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.auth-modal h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #222;
+  text-align: center;
 }
 
 .auth-modal input {
   width: 100%;
-  margin: 0.5rem 0;
-  padding: 0.6rem;
-  border-radius: 5px;
+  padding: 10px 14px;
+  margin: 8px 0;
   border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
-/* Close button inside license modal */
-.auth-modal .close-btn {
+.auth-modal button {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-modal button:hover {
+  background-color: #1976D2;
+}
+
+.close-btn {
   position: absolute;
-  top: 10px;
-  right: 15px;
+  top: 12px;
+  right: 12px;
   background: none;
   border: none;
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 24px;
   cursor: pointer;
-  z-index: 10;
+  color: #666;
+}
+
+.close-btn:hover {
+  color: #000;
 }
