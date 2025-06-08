@@ -43,6 +43,8 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  flex: 1 1 180px;
+  min-width: 160px;
 }
 
 .search-bar-container button:hover {
@@ -50,14 +52,40 @@
   box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
 }
 
+@media (max-width: 1024px) {
+  .search-bar-container {
+    gap: 12px;
+    padding: 20px;
+  }
+  .search-bar-container input,
+  .search-bar-container select,
+  .search-bar-container button {
+    flex: 1 1 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .search-bar-container {
     flex-direction: column;
     align-items: stretch;
+    padding: 16px;
   }
   .search-bar-container input,
   .search-bar-container select,
   .search-bar-container button {
     width: 100%;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar-container {
+    gap: 10px;
+  }
+  .search-bar-container input,
+  .search-bar-container select,
+  .search-bar-container button {
+    padding: 10px 12px;
+    font-size: 13px;
   }
 }
