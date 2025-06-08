@@ -1,117 +1,57 @@
 /* SearchBar.css */
 
 .search-bar-container {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  padding: 24px;
-  background: linear-gradient(135deg, #e0f7fa, #f5f5f5);
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  gap: 12px;
+  padding: 16px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   align-items: center;
-  justify-content: center;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-  overflow: hidden;
-}
-
-.search-bar-container.collapsed {
-  max-height: 0;
-  opacity: 0;
-  padding: 0;
-  pointer-events: none;
-}
-
-.search-bar-container.expanded {
-  max-height: 1200px;
-  opacity: 1;
-  pointer-events: all;
+  justify-content: space-between;
 }
 
 .search-bar-container input,
 .search-bar-container select {
   padding: 10px 12px;
   font-size: 14px;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-  flex: 1 1 180px;
-  min-width: 160px;
-  max-width: 300px;
-  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  flex: 1 1 160px;
+  min-width: 140px;
   outline: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  margin-bottom: 8px;
-}
-
-.search-bar-container input::placeholder {
-  font-size: 13px;
-  color: #9ca3af;
+  transition: border 0.2s ease;
 }
 
 .search-bar-container input:focus,
 .search-bar-container select:focus {
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  border-color: #3b82f6;
 }
 
 .search-bar-container button {
-  padding: 12px 16px;
-  background: linear-gradient(to right, #6366f1, #4f46e5);
-  color: #ffffff;
+  padding: 10px 18px;
+  background-color: #3b82f6;
+  color: white;
   border: none;
-  border-radius: 10px;
-  font-size: 14px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-  flex: 1 1 180px;
-  min-width: 160px;
-  max-width: 300px;
-  margin-bottom: 8px;
+  transition: background-color 0.3s ease;
 }
 
 .search-bar-container button:hover {
-  background: linear-gradient(to right, #4f46e5, #4338ca);
-  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+  background-color: #2563eb;
 }
 
 @media (max-width: 768px) {
   .search-bar-container {
     flex-direction: column;
     align-items: stretch;
-    padding: 16px;
-    gap: 8px;
   }
   .search-bar-container input,
   .search-bar-container select,
   .search-bar-container button {
     width: 100%;
-    font-size: 13px;
-    max-width: 100%;
-    margin-bottom: 6px;
-  }
-  .search-bar-container input::placeholder {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .search-bar-container {
-    padding: 12px;
-    gap: 6px;
-  }
-  .search-bar-container input,
-  .search-bar-container select,
-  .search-bar-container button {
-    padding: 10px;
-    font-size: 12px;
-    margin-bottom: 4px;
-  }
-  .search-bar-container input::placeholder {
-    font-size: 11px;
   }
 }
